@@ -68,11 +68,9 @@ def comprar_produto():
         print(f"Total a pagar: R${total:.2f}")
 
         if total >= 100:
-
             print("Desconto disponível!")
 
         else:
-
             print("Sem desconto.")
 
     # Caso o usuário digite letras no lugar de números
