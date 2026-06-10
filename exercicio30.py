@@ -115,30 +115,6 @@ def editar_alunos(self):
         except ValueError:
             print(VERMELHO + "\nDigite valores válidos." + RESET)
 
-        def salvar_arquivo(self, cliente):
-
-        with open(self.arquivo, "a", encoding="utf-8") as arquivo:
-
-            arquivo.write(
-                f"Nome: {cliente.nome} | "
-                f"Idade: {cliente.idade} | "
-                f"E-mail: {cliente.email} | "
-                f"Telefone: {cliente.telefone}\n"
-            )
-
-    def atualizar_arquivo(self):
-
-        with open(self.arquivo, "w", encoding="utf-8") as arquivo:
-
-            for cliente in self.clientes:
-
-                arquivo.write(
-                    f"Nome: {cliente.nome} | "
-                    f"Idade: {cliente.idade} | "
-                    f"E-mail: {cliente.email} | "
-                    f"Telefone: {cliente.telefone}\n"
-                )
-
         def menu(self):
             while True:
                 print(MAGENTA + "\n---- MENU PRINCIPAL ----" + RESET)

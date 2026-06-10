@@ -6,7 +6,7 @@ RED = "\033[31m"
 LIGHT_BLUE = "\033[94m"
 RESET = "\033[0m"
 
-ARQUIVO = r"C:\Users\enzol\Downloads\treino\dados.txt"
+ARQUIVO = r"C:\Users\1bmod\Documents\tt"
 
 lista_alunos = []
 class Aluno():
