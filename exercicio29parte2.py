@@ -1,13 +1,14 @@
 import os
-pasta = r"C:\Users\1bmod\Documents\tt"
 
-AZUL = "\033[94m"
-VERDE = "\033[92m"
-VERMELHO = "\033[91m"
-AMARELO = "\033[93m"
 MAGENTA = "\033[95m"
+AZUL = "\033[94m"
 CIANO = "\033[96m"
+VERDE = "\033[92m"
+AMARELO = "\033[93m"
+VERMELHO = "\033[91m"
 RESET = "\033[0m"
+
+pasta = r"C:\Users\1bmod\Documents\tt"
 
 class Cliente:
     def __init__(self, nome, idade, email, telefone):
@@ -16,12 +17,9 @@ class Cliente:
         self.email = email
         self.telefone = telefone
 
-
 class SistemaCadastro:
     def __init__(self):
-
         self.clientes = []
-
         self.arquivo = "clientes.txt"
         self.carregar_clientes()
 
@@ -29,7 +27,6 @@ class SistemaCadastro:
         try:
             with open(self.arquivo, "r", encoding="utf-8") as arquivo:
                 for linha in arquivo:
-
                     dados = linha.strip().split(" | ")
 
                     nome = dados[0].replace("Nome: ", "")
@@ -38,7 +35,6 @@ class SistemaCadastro:
                     telefone = dados[3].replace("Telefone: ", "")
 
                     cliente = Cliente(nome, idade, email, telefone)
-
                     self.clientes.append(cliente)
 
         except FileNotFoundError:
@@ -46,7 +42,7 @@ class SistemaCadastro:
 
     def cadastrar_cliente(self):
         try:
-            print(AZUL + "\n---- CADASTRO ----" + RESET)
+            print(MAGENTA + "\n---- CADASTRO ----" + RESET)
 
             while True:
                 nome = input("Digite o nome: ").strip()
@@ -102,7 +98,7 @@ class SistemaCadastro:
 
             self.salvar_arquivo(cliente)
 
-            print(CIANO + "\nCliente cadastrado com sucesso!" + RESET)
+            print(MAGENTA + "\nCliente cadastrado com sucesso!" + RESET)
 
         except Exception as erro:
             print(VERMELHO + f"Erro: {erro}" + RESET)
@@ -144,7 +140,7 @@ class SistemaCadastro:
 
             cliente = self.clientes[numero - 1]
 
-            print(AZUL + "\n---- EDITAR CLIENTE ----" + RESET)
+            print(MAGENTA + "\n---- EDITAR CLIENTE ----" + RESET)
 
             cliente.nome = input("Novo nome: ").strip()
             cliente.idade = int(input("Nova idade: "))
@@ -210,7 +206,7 @@ class SistemaCadastro:
                     ).strip().lower()
 
                     if confirmar == "s":
-                        print(CIANO + "Sistema encerrado!" + RESET)
+                        print(VERDE + "Sistema encerrado!" + RESET)
                         return
 
                     elif confirmar == "n":
